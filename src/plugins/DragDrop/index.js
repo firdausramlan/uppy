@@ -44,6 +44,7 @@ module.exports = class DragDrop extends Plugin {
     // i18n
     this.translator = new Translator({locale: this.locale})
     this.i18n = this.translator.translate.bind(this.translator)
+    this.i18nArray = this.translator.translateArray.bind(this.translator)
 
     // Bind `this` to class methods
     this.handleDrop = this.handleDrop.bind(this)
@@ -140,7 +141,7 @@ module.exports = class DragDrop extends Plugin {
               }}
               onchange={this.handleInputChange}
               value="" />
-            {this.i18n('dropHereOr', {
+            {this.i18nArray('dropHereOr', {
               browse: <span class="uppy-DragDrop-dragText">{this.i18n('browse')}</span>
             })}
           </label>
